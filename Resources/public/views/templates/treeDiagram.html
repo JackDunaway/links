@@ -2,17 +2,9 @@
 		<div class="row">
 			<div class="col-xs-10" ng-style="{'color':node.color}" ng-mouseenter="highlight(node)" ng-mouseleave="unhighlight(node)">
 				<div class="btn-group">
-					<button class="btn btn-default btn-xs" ng-click="toggle(node)" ng-hide="node.collapsible">
-						<i class="glyphicon glyphicon-eye-close" ng-show="node.hidden"></i>
-						<i class="glyphicon glyphicon-eye-open" ng-hide="node.hidden"></i>
-					</button>
 					<button class="btn btn-default btn-xs" ng-click="collapse(node)" ng-show="node.collapsible">
 						<i class="glyphicon glyphicon-resize-small" ng-show="node.collapsed"></i>
 						<i class="glyphicon glyphicon-resize-full" ng-hide="node.collapsed"></i>
-					</button>
-					<button class="btn btn-default btn-xs" ng-click="isCollapsed = !isCollapsed" ng-show="node.children.length">
-						<i class="glyphicon glyphicon-plus" ng-show="isCollapsed"></i>
-						<i class="glyphicon glyphicon-minus" ng-hide="isCollapsed"></i>
 					</button>
 					<button class="btn btn-default btn-xs" ng-click="openVI(node)" ng-show="node.canOpen">
 						<i class="glyphicon glyphicon-share"></i>
@@ -26,7 +18,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12" ng-style="{'color':node.color}">
-				<ul class="list-group" collapse="isCollapsed">
+				<ul class="list-group" collapse="node.collapsed">
 					<li class="list-group-item" ng-repeat="node in node.children" ng-class="{'list-group-item-info' : node.highlight}" ng-include="'tree_item_renderer.html'">
 					</li>
 				</ul>
@@ -34,5 +26,5 @@
 		</div>
 </script>
 <ul class="list-group">
-	<li class="list-group-item" ng-repeat="node in treeOut" ng-class="{'list-group-item-info' : node.highlight}" ng-include="'tree_item_renderer.html'"></li>
+	<li class="list-group-item" ng-repeat="node in tree" ng-class="{'list-group-item-info' : node.highlight}" ng-include="'tree_item_renderer.html'"></li>
 </ul>
