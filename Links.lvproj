@@ -5,16 +5,16 @@
 	<Property Name="NI.Project.Description" Type="Str"></Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="NI.SortType" Type="Int">1</Property>
-		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
-		<Property Name="server.control.propertiesEnabled" Type="Bool">true</Property>
+		<Property Name="server.app.propertiesEnabled" Type="Bool">false</Property>
+		<Property Name="server.control.propertiesEnabled" Type="Bool">false</Property>
 		<Property Name="server.tcp.acl" Type="Str">0800000008000000</Property>
 		<Property Name="server.tcp.enabled" Type="Bool">true</Property>
-		<Property Name="server.tcp.port" Type="Int">8081</Property>
-		<Property Name="server.tcp.serviceName" Type="Str">LinksProject</Property>
+		<Property Name="server.tcp.port" Type="Int">3371</Property>
+		<Property Name="server.tcp.serviceName" Type="Str">LinksApplication</Property>
 		<Property Name="server.tcp.serviceName.default" Type="Str">My Computer/VI Server</Property>
 		<Property Name="server.vi.access" Type="Str"></Property>
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
-		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
+		<Property Name="server.vi.propertiesEnabled" Type="Bool">false</Property>
 		<Property Name="server.viscripting.showScriptingOperationsInContextHelp" Type="Bool">false</Property>
 		<Property Name="server.viscripting.showScriptingOperationsInEditor" Type="Bool">false</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
@@ -25,88 +25,145 @@
 			<Item Name="CreateWebServiceConfig.vi" Type="VI" URL="../Development/CreateWebServiceConfig.vi"/>
 		</Item>
 		<Item Name="Featherweight" Type="Folder">
-			<Item Name="DOMUserDefRef.dll" Type="Document" URL="DOMUserDefRef.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			<Item Name="Core" Type="Folder">
+				<Item Name="Actor" Type="Folder">
+					<Item Name="Context" Type="Folder">
+						<Item Name="FTW-Actor-Context.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Actor/Context/FTW-Actor-Context.lvclass"/>
+					</Item>
+					<Item Name="Instance" Type="Folder">
+						<Item Name="FTW-Actor.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Actor/Instance/FTW-Actor.lvclass"/>
+					</Item>
+					<Item Name="Messaging" Type="Folder">
+						<Item Name="Address" Type="Folder">
+							<Item Name="FTW-Actor-Address.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Actor/Messaging/Address/FTW-Actor-Address.lvclass"/>
+						</Item>
+						<Item Name="FTW-Actor-Broker.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Actor/Messaging/FTW-Actor-Broker.lvclass"/>
+					</Item>
+					<Item Name="Reference" Type="Folder">
+						<Item Name="FTW-ActorReference.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Actor/Reference/FTW-ActorReference.lvclass"/>
+					</Item>
+				</Item>
+				<Item Name="Application" Type="Folder">
+					<Item Name="FTW-App-StringVersionToString.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Application/FTW-App-StringVersionToString.vi"/>
+					<Item Name="FTW-App-VersionToString.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Application/FTW-App-VersionToString.vi"/>
+				</Item>
+				<Item Name="Container" Type="Folder">
+					<Item Name="FTW-Container.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Container/FTW-Container.lvclass"/>
+				</Item>
+				<Item Name="Error" Type="Folder">
+					<Item Name="FTW-ERR-CallChain.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-CallChain.vi"/>
+					<Item Name="FTW-ERR-Clear.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-Clear.vi"/>
+					<Item Name="FTW-ERR-ExceptionType.ctl" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-ExceptionType.ctl"/>
+					<Item Name="FTW-ERR-NoErrorConstant.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-NoErrorConstant.vi"/>
+					<Item Name="FTW-ERR-SerializeForLog.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-SerializeForLog.vi"/>
+					<Item Name="FTW-ERR-StatusError.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-StatusError.vi"/>
+					<Item Name="FTW-ERR-StatusException.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-StatusException.vi"/>
+					<Item Name="FTW-ERR-StatusOK.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-StatusOK.vi"/>
+					<Item Name="FTW-ERR-ThrowError.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-ThrowError.vi"/>
+					<Item Name="FTW-ERR-ThrowGenericError.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-ThrowGenericError.vi"/>
+					<Item Name="FTW-ERR-ThrowImpossibleError.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-ThrowImpossibleError.vi"/>
+					<Item Name="FTW-ERR-UnknownJob.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-UnknownJob.vi"/>
+					<Item Name="FTW-ERR-UnknownMessage.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Error/FTW-ERR-UnknownMessage.vi"/>
+				</Item>
+				<Item Name="File" Type="Folder">
+					<Item Name="FTW-File-CreateDirectory.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/File/FTW-File-CreateDirectory.vi"/>
+					<Item Name="FTW-File-Extension.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/File/FTW-File-Extension.vi"/>
+				</Item>
+				<Item Name="JSON" Type="Folder">
+					<Item Name="FTW-JSON-CompositeType.ctl" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-CompositeType.ctl"/>
+					<Item Name="FTW-JSON-Datatype.ctl" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-Datatype.ctl"/>
+					<Item Name="FTW-JSON-Escape.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-Escape.vi"/>
+					<Item Name="FTW-JSON-Format-Boolean.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-Format-Boolean.vi"/>
+					<Item Name="FTW-JSON-Format-String.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-Format-String.vi"/>
+					<Item Name="FTW-JSON-Interpret-Boolean.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-Interpret-Boolean.vi"/>
+					<Item Name="FTW-JSON-RegexHeader.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-RegexHeader.vi"/>
+					<Item Name="FTW-JSON-RegexParse.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-RegexParse.vi"/>
+					<Item Name="FTW-JSON-ToLabVIEW.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-ToLabVIEW.vi"/>
+					<Item Name="FTW-JSON-Unescape.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/JSON/FTW-JSON-Unescape.vi"/>
+				</Item>
+				<Item Name="Logging" Type="Folder">
+					<Item Name="Event" Type="Folder">
+						<Item Name="FTW-Log-LookupMessenger.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Logging/Event/FTW-Log-LookupMessenger.vi"/>
+						<Item Name="FTW-Log-SerializeEvent.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Logging/Event/FTW-Log-SerializeEvent.vi"/>
+					</Item>
+					<Item Name="FTW-EventLogger-API.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Logging/FTW-EventLogger-API.lvclass"/>
+				</Item>
+				<Item Name="Messaging" Type="Folder">
+					<Item Name="Message" Type="Folder">
+						<Item Name="FTW-Message.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Messaging/Message/FTW-Message.lvclass"/>
+					</Item>
+					<Item Name="Message.Actor" Type="Folder">
+						<Item Name="FTW-Message-Actor.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Messaging/Message.Actor/FTW-Message-Actor.lvclass"/>
+					</Item>
+					<Item Name="Messenger" Type="Folder">
+						<Item Name="FTW-Messenger.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Messaging/Messenger/FTW-Messenger.lvclass"/>
+					</Item>
+					<Item Name="Messenger.Actor" Type="Folder">
+						<Item Name="FTW-Messenger-Actor.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Messaging/Messenger.Actor/FTW-Messenger-Actor.lvclass"/>
+					</Item>
+				</Item>
+				<Item Name="Numeric" Type="Folder">
+					<Item Name="FTW-NUM-Counter.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Numeric/FTW-NUM-Counter.vi"/>
+				</Item>
+				<Item Name="Regex" Type="Folder">
+					<Item Name="FTW-Regex-ReplaceAll.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Regex/FTW-Regex-ReplaceAll.vi"/>
+					<Item Name="FTW-Regex-ReplaceAndReturn.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Regex/FTW-Regex-ReplaceAndReturn.vi"/>
+					<Item Name="FTW-Regex.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Regex/FTW-Regex.vi"/>
+				</Item>
+				<Item Name="Sequencer" Type="Folder">
+					<Item Name="FTW-Sequencer.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Core/Sequencer/FTW-Sequencer.lvclass"/>
+				</Item>
+				<Item Name="String" Type="Folder">
+					<Item Name="FTW-STR-Array-Delimit.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/String/FTW-STR-Array-Delimit.vi"/>
+					<Item Name="FTW-STR-Encode-Hex.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/String/FTW-STR-Encode-Hex.vi"/>
+					<Item Name="FTW-STR-Random-Hex.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/String/FTW-STR-Random-Hex.vi"/>
+					<Item Name="FTW-STR-Repeat.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/String/FTW-STR-Repeat.vi"/>
+					<Item Name="FTW-STR-ReplaceWhitespace.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/String/FTW-STR-ReplaceWhitespace.vi"/>
+				</Item>
+				<Item Name="Time" Type="Folder">
+					<Item Name="FTW-Time-Display-Timestamp.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Time/FTW-Time-Display-Timestamp.vi"/>
+					<Item Name="FTW-Time-DisplayFormat-Timestamp.ctl" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Time/FTW-Time-DisplayFormat-Timestamp.ctl"/>
+					<Item Name="FTW-Time-Elapse.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Time/FTW-Time-Elapse.vi"/>
+					<Item Name="FTW-Time-Timer.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/Time/FTW-Time-Timer.vi"/>
+				</Item>
+				<Item Name="VI Server" Type="Folder">
+					<Item Name="FTW-VIServer-AsyncCallOptions.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/VI Server/FTW-VIServer-AsyncCallOptions.vi"/>
+					<Item Name="FTW-VIServer-GetClassDefaultData.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/VI Server/FTW-VIServer-GetClassDefaultData.vi"/>
+				</Item>
+				<Item Name="XML" Type="Folder">
+					<Item Name="FTW-XML-Construct.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Construct.vi"/>
+					<Item Name="FTW-XML-Destroy.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Destroy.vi"/>
+					<Item Name="FTW-XML-Element-Append.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Element-Append.vi"/>
+					<Item Name="FTW-XML-Element-GetFirstChild.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Element-GetFirstChild.vi"/>
+					<Item Name="FTW-XML-Element-GetNextSibling.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Element-GetNextSibling.vi"/>
+					<Item Name="FTW-XML-Element-GetValue.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Element-GetValue.vi"/>
+					<Item Name="FTW-XML-Query-Elements.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Query-Elements.vi"/>
+					<Item Name="FTW-XML-Query-ElementValue.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Query-ElementValue.vi"/>
+					<Item Name="FTW-XML-Query-FirstElement.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Query-FirstElement.vi"/>
+					<Item Name="FTW-XML-Query-UpdateFirstElementXML.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Core/XML/FTW-XML-Query-UpdateFirstElementXML.vi"/>
+				</Item>
 			</Item>
-			<Item Name="FTW-Actor-Address.lvclass" Type="LVClass" URL="../../featherweight/Core/Actor/Messaging/Address/FTW-Actor-Address.lvclass"/>
-			<Item Name="FTW-Actor-Broker.lvclass" Type="LVClass" URL="../../featherweight/Core/Actor/Messaging/FTW-Actor-Broker.lvclass"/>
-			<Item Name="FTW-Actor-Context.lvclass" Type="LVClass" URL="../../featherweight/Core/Actor/Context/FTW-Actor-Context.lvclass"/>
-			<Item Name="FTW-Actor.lvclass" Type="LVClass" URL="../../featherweight/Core/Actor/Instance/FTW-Actor.lvclass"/>
-			<Item Name="FTW-ActorReference.lvclass" Type="LVClass" URL="../../featherweight/Core/Actor/Reference/FTW-ActorReference.lvclass"/>
-			<Item Name="FTW-App-StringVersionToString.vi" Type="VI" URL="../../featherweight/Core/Application/FTW-App-StringVersionToString.vi"/>
-			<Item Name="FTW-App-VersionToString.vi" Type="VI" URL="../../featherweight/Core/Application/FTW-App-VersionToString.vi"/>
-			<Item Name="FTW-Container.lvclass" Type="LVClass" URL="../../featherweight/Core/Container/FTW-Container.lvclass"/>
-			<Item Name="FTW-ERR-CallChain.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-CallChain.vi"/>
-			<Item Name="FTW-ERR-Clear.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-Clear.vi"/>
-			<Item Name="FTW-ERR-ExceptionType.ctl" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-ExceptionType.ctl"/>
-			<Item Name="FTW-ERR-NoErrorConstant.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-NoErrorConstant.vi"/>
-			<Item Name="FTW-ERR-SerializeForLog.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-SerializeForLog.vi"/>
-			<Item Name="FTW-ERR-StatusError.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-StatusError.vi"/>
-			<Item Name="FTW-ERR-StatusException.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-StatusException.vi"/>
-			<Item Name="FTW-ERR-StatusOK.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-StatusOK.vi"/>
-			<Item Name="FTW-ERR-ThrowError.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-ThrowError.vi"/>
-			<Item Name="FTW-ERR-ThrowGenericError.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-ThrowGenericError.vi"/>
-			<Item Name="FTW-ERR-ThrowImpossibleError.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-ThrowImpossibleError.vi"/>
-			<Item Name="FTW-ERR-UnknownJob.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-UnknownJob.vi"/>
-			<Item Name="FTW-ERR-UnknownMessage.vi" Type="VI" URL="../../featherweight/Core/Error/FTW-ERR-UnknownMessage.vi"/>
-			<Item Name="FTW-EventLogger-API.lvclass" Type="LVClass" URL="../../featherweight/Core/Logging/FTW-EventLogger-API.lvclass"/>
-			<Item Name="FTW-File-CreateDirectory.vi" Type="VI" URL="../../featherweight/Core/File/FTW-File-CreateDirectory.vi"/>
-			<Item Name="FTW-File-Extension.vi" Type="VI" URL="../../featherweight/Core/File/FTW-File-Extension.vi"/>
-			<Item Name="FTW-JSON-CompositeType.ctl" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-CompositeType.ctl"/>
-			<Item Name="FTW-JSON-Datatype.ctl" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-Datatype.ctl"/>
-			<Item Name="FTW-JSON-Escape.vi" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-Escape.vi"/>
-			<Item Name="FTW-JSON-Format-Boolean.vi" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-Format-Boolean.vi"/>
-			<Item Name="FTW-JSON-Format-String.vi" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-Format-String.vi"/>
-			<Item Name="FTW-JSON-Interpret-Boolean.vi" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-Interpret-Boolean.vi"/>
-			<Item Name="FTW-JSON-RegexHeader.vi" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-RegexHeader.vi"/>
-			<Item Name="FTW-JSON-RegexParse.vi" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-RegexParse.vi"/>
-			<Item Name="FTW-JSON-ToLabVIEW.vi" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-ToLabVIEW.vi"/>
-			<Item Name="FTW-JSON-Unescape.vi" Type="VI" URL="../../featherweight/Core/JSON/FTW-JSON-Unescape.vi"/>
-			<Item Name="FTW-Linker-LabVIEWFiletype.ctl" Type="VI" URL="../../featherweight/Dev/Linker/FTW-Linker-LabVIEWFiletype.ctl"/>
-			<Item Name="FTW-Linker-LinkerInfoStructure.ctl" Type="VI" URL="../../featherweight/Dev/Linker/FTW-Linker-LinkerInfoStructure.ctl"/>
-			<Item Name="FTW-Linker-LVFileStaticLinks.vi" Type="VI" URL="../../featherweight/Dev/Linker/FTW-Linker-LVFileStaticLinks.vi"/>
-			<Item Name="FTW-Log-LookupMessenger.vi" Type="VI" URL="../../featherweight/Core/Logging/Event/FTW-Log-LookupMessenger.vi"/>
-			<Item Name="FTW-Log-SerializeEvent.vi" Type="VI" URL="../../featherweight/Core/Logging/Event/FTW-Log-SerializeEvent.vi"/>
-			<Item Name="FTW-Message-Actor.lvclass" Type="LVClass" URL="../../featherweight/Core/Messaging/Message.Actor/FTW-Message-Actor.lvclass"/>
-			<Item Name="FTW-Message.lvclass" Type="LVClass" URL="../../featherweight/Core/Messaging/Message/FTW-Message.lvclass"/>
-			<Item Name="FTW-Messenger-Actor.lvclass" Type="LVClass" URL="../../featherweight/Core/Messaging/Messenger.Actor/FTW-Messenger-Actor.lvclass"/>
-			<Item Name="FTW-Messenger.lvclass" Type="LVClass" URL="../../featherweight/Core/Messaging/Messenger/FTW-Messenger.lvclass"/>
-			<Item Name="FTW-NUM-Counter.vi" Type="VI" URL="../../featherweight/Core/Numeric/FTW-NUM-Counter.vi"/>
-			<Item Name="FTW-Panel-FrontPanel-Close.vi" Type="VI" URL="../../featherweight/UI/Panel/FTW-Panel-FrontPanel-Close.vi"/>
-			<Item Name="FTW-Panel-FrontPanel-Open.vi" Type="VI" URL="../../featherweight/UI/Panel/FTW-Panel-FrontPanel-Open.vi"/>
-			<Item Name="FTW-Regex-ReplaceAll.vi" Type="VI" URL="../../featherweight/Core/Regex/FTW-Regex-ReplaceAll.vi"/>
-			<Item Name="FTW-Regex-ReplaceAndReturn.vi" Type="VI" URL="../../featherweight/Core/Regex/FTW-Regex-ReplaceAndReturn.vi"/>
-			<Item Name="FTW-Regex.vi" Type="VI" URL="../../featherweight/Core/Regex/FTW-Regex.vi"/>
-			<Item Name="FTW-Sequencer.lvclass" Type="LVClass" URL="../../featherweight/Core/Sequencer/FTW-Sequencer.lvclass"/>
-			<Item Name="FTW-STR-Array-Delimit.vi" Type="VI" URL="../../featherweight/Core/String/FTW-STR-Array-Delimit.vi"/>
-			<Item Name="FTW-STR-Encode-Hex.vi" Type="VI" URL="../../featherweight/Core/String/FTW-STR-Encode-Hex.vi"/>
-			<Item Name="FTW-STR-Random-Hex.vi" Type="VI" URL="../../featherweight/Core/String/FTW-STR-Random-Hex.vi"/>
-			<Item Name="FTW-STR-Repeat.vi" Type="VI" URL="../../featherweight/Core/String/FTW-STR-Repeat.vi"/>
-			<Item Name="FTW-STR-ReplaceWhitespace.vi" Type="VI" URL="../../featherweight/Core/String/FTW-STR-ReplaceWhitespace.vi"/>
-			<Item Name="FTW-Time-Display-Timestamp.vi" Type="VI" URL="../../featherweight/Core/Time/FTW-Time-Display-Timestamp.vi"/>
-			<Item Name="FTW-Time-DisplayFormat-Timestamp.ctl" Type="VI" URL="../../featherweight/Core/Time/FTW-Time-DisplayFormat-Timestamp.ctl"/>
-			<Item Name="FTW-Time-Elapse.vi" Type="VI" URL="../../featherweight/Core/Time/FTW-Time-Elapse.vi"/>
-			<Item Name="FTW-Time-Timer.vi" Type="VI" URL="../../featherweight/Core/Time/FTW-Time-Timer.vi"/>
-			<Item Name="FTW-VIServer-AsyncCallOptions.vi" Type="VI" URL="../../featherweight/Core/VI Server/FTW-VIServer-AsyncCallOptions.vi"/>
-			<Item Name="FTW-VIServer-GetClassDefaultData.vi" Type="VI" URL="../../featherweight/Core/VI Server/FTW-VIServer-GetClassDefaultData.vi"/>
-			<Item Name="FTW-WEB-CreateWebServiceINI.vi" Type="VI" URL="../../featherweight/Web/Server/FTW-WEB-CreateWebServiceINI.vi"/>
-			<Item Name="FTW-Web-HTTPResponseCode.ctl" Type="VI" URL="../../featherweight/Web/Utils/FTW-Web-HTTPResponseCode.ctl"/>
-			<Item Name="FTW-WebService.lvclass" Type="LVClass" URL="../../featherweight/Web/Server/FTW-WebService.lvclass"/>
-			<Item Name="FTW-XML-Construct.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Construct.vi"/>
-			<Item Name="FTW-XML-Destroy.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Destroy.vi"/>
-			<Item Name="FTW-XML-Element-Append.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Element-Append.vi"/>
-			<Item Name="FTW-XML-Element-GetFirstChild.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Element-GetFirstChild.vi"/>
-			<Item Name="FTW-XML-Element-GetNextSibling.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Element-GetNextSibling.vi"/>
-			<Item Name="FTW-XML-Element-GetValue.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Element-GetValue.vi"/>
-			<Item Name="FTW-XML-Query-Elements.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Query-Elements.vi"/>
-			<Item Name="FTW-XML-Query-ElementValue.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Query-ElementValue.vi"/>
-			<Item Name="FTW-XML-Query-FirstElement.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Query-FirstElement.vi"/>
-			<Item Name="FTW-XML-Query-UpdateFirstElementXML.vi" Type="VI" URL="../../featherweight/Core/XML/FTW-XML-Query-UpdateFirstElementXML.vi"/>
-			<Item Name="System.Windows.Forms" Type="Document" URL="System.Windows.Forms">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			<Item Name="Dev" Type="Folder">
+				<Item Name="Linker" Type="Folder">
+					<Item Name="FTW-Linker-LabVIEWFiletype.ctl" Type="VI" URL="../LabVIEW Server Source/Featherweight/Dev/Linker/FTW-Linker-LabVIEWFiletype.ctl"/>
+					<Item Name="FTW-Linker-LinkerInfoStructure.ctl" Type="VI" URL="../LabVIEW Server Source/Featherweight/Dev/Linker/FTW-Linker-LinkerInfoStructure.ctl"/>
+					<Item Name="FTW-Linker-LVFileStaticLinks.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Dev/Linker/FTW-Linker-LVFileStaticLinks.vi"/>
+				</Item>
 			</Item>
-			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
-				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			<Item Name="UI" Type="Folder">
+				<Item Name="Panel" Type="Folder">
+					<Item Name="FTW-Panel-FrontPanel-Close.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/UI/Panel/FTW-Panel-FrontPanel-Close.vi"/>
+					<Item Name="FTW-Panel-FrontPanel-Open.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/UI/Panel/FTW-Panel-FrontPanel-Open.vi"/>
+				</Item>
+			</Item>
+			<Item Name="Web" Type="Folder">
+				<Item Name="Server" Type="Folder">
+					<Item Name="FTW-WEB-CreateWebServiceINI.vi" Type="VI" URL="../LabVIEW Server Source/Featherweight/Web/Server/FTW-WEB-CreateWebServiceINI.vi"/>
+					<Item Name="FTW-WebService.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Featherweight/Web/Server/FTW-WebService.lvclass"/>
+				</Item>
+				<Item Name="Utils" Type="Folder">
+					<Item Name="FTW-Web-HTTPResponseCode.ctl" Type="VI" URL="../LabVIEW Server Source/Featherweight/Web/Utils/FTW-Web-HTTPResponseCode.ctl"/>
+				</Item>
 			</Item>
 		</Item>
 		<Item Name="Resources" Type="Folder" URL="../Resources">
@@ -188,7 +245,16 @@
 				<Item Name="Write PNG File.vi" Type="VI" URL="/&lt;vilib&gt;/picture/png.llb/Write PNG File.vi"/>
 				<Item Name="XMLGen.lvlib" Type="Library" URL="/&lt;vilib&gt;/AppBuilder/Engine/WebServiceDescription/XMLGen/XMLGen.lvlib"/>
 			</Item>
+			<Item Name="DOMUserDefRef.dll" Type="Document" URL="DOMUserDefRef.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="provcom_StringGlobals.vi" Type="VI" URL="/&lt;resource&gt;/Framework/Providers/Common/provcom_StringGlobals.vi"/>
+			<Item Name="System.Windows.Forms" Type="Document" URL="System.Windows.Forms">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="ws_runtime.dll" Type="Document" URL="ws_runtime.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Links" Type="EXE">
@@ -219,7 +285,7 @@
 				<Property Name="Destination[3].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">4</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Build/Application.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{21D6B60E-0372-41BD-AFDB-34EA08ED85CA}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{0E66752B-7D7D-439E-9975-EE7F7BBA5E38}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LinksApplication.lvclass/Main.vi</Property>
@@ -239,7 +305,7 @@
 				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Build/WebService.ini</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">3</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Featherweight/FTW-WebService.lvclass/Configuration/niembeddedws.conf</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Featherweight/Web/Server/FTW-WebService.lvclass/Configuration/niembeddedws.conf</Property>
 				<Property Name="Source[5].newName" Type="Str">secure-niembeddedws.conf</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">3</Property>
 				<Property Name="Source[6].itemID" Type="Ref">/My Computer/LinksApplication.lvclass/Protected/niembeddedws.conf</Property>
