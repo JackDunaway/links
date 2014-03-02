@@ -170,9 +170,7 @@
 		<Item Name="Resources" Type="Folder" URL="../Resources">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="AnalyzeStaticLinkages.vi" Type="VI" URL="../LabVIEW Server Source/Links Application/AnalyzeStaticLinkages.vi"/>
 		<Item Name="LinksApplication.lvclass" Type="LVClass" URL="../LabVIEW Server Source/Links Application/LinksApplication.lvclass"/>
-		<Item Name="LookupFilepath.vi" Type="VI" URL="../LabVIEW Server Source/Links Application/LookupFilepath.vi"/>
 		<Item Name="Top-Level Launcher.vi" Type="VI" URL="../LabVIEW Server Source/Top-Level Launcher.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -321,19 +319,15 @@
 				<Property Name="Destination[3].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">4</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/Build/Application.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{8774F7B4-7418-4634-A4DF-F45572DA066D}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{9C925A8D-FDB8-4C3E-9B08-A1D334FFD531}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/LinksApplication.lvclass/Protected/Main.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Featherweight/Web/Server/FTW-WebService.lvclass/Framework/FTW-WebService-IncomingRequestRouter.vi</Property>
-				<Property Name="Source[10].properties[0].type" Type="Str">Remove front panel</Property>
-				<Property Name="Source[10].properties[0].value" Type="Bool">false</Property>
-				<Property Name="Source[10].properties[1].type" Type="Str">Remove block diagram</Property>
-				<Property Name="Source[10].properties[1].value" Type="Bool">false</Property>
-				<Property Name="Source[10].propertiesCount" Type="Int">2</Property>
-				<Property Name="Source[10].type" Type="Str">VI</Property>
+				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[10].itemID" Type="Ref">/My Computer/Build/WebService.ini</Property>
+				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[2].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">2</Property>
@@ -344,25 +338,29 @@
 				<Property Name="Source[3].destinationIndex" Type="Int">3</Property>
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Build</Property>
 				<Property Name="Source[3].type" Type="Str">Container</Property>
-				<Property Name="Source[4].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[4].itemID" Type="Ref"></Property>
-				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[4].destinationIndex" Type="Int">3</Property>
+				<Property Name="Source[4].itemID" Type="Ref">/My Computer/Featherweight/Web/Server/FTW-WebService.lvclass/Configuration/niembeddedws.conf</Property>
+				<Property Name="Source[4].newName" Type="Str">secure-niembeddedws.conf</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">3</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/Featherweight/Web/Server/FTW-WebService.lvclass/Configuration/niembeddedws.conf</Property>
-				<Property Name="Source[5].newName" Type="Str">secure-niembeddedws.conf</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/LinksApplication.lvclass/Protected/niembeddedws.conf</Property>
+				<Property Name="Source[6].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">3</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/LinksApplication.lvclass/Protected/niembeddedws.conf</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/Featherweight/Dev/Linker</Property>
+				<Property Name="Source[6].type" Type="Str">Container</Property>
 				<Property Name="Source[7].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[7].destinationIndex" Type="Int">3</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Featherweight/Dev/Linker</Property>
+				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/Featherweight</Property>
 				<Property Name="Source[7].type" Type="Str">Container</Property>
-				<Property Name="Source[8].Container.applyDestination" Type="Bool">true</Property>
 				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Featherweight</Property>
-				<Property Name="Source[8].type" Type="Str">Container</Property>
-				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Build/FTW-Allowed-MIME-Types.txt</Property>
-				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/Build/FTW-Allowed-MIME-Types.txt</Property>
+				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/My Computer/Featherweight/Web/Server/FTW-WebService.lvclass/Framework/FTW-WebService-IncomingRequestRouter.vi</Property>
+				<Property Name="Source[9].properties[0].type" Type="Str">Remove front panel</Property>
+				<Property Name="Source[9].properties[0].value" Type="Bool">false</Property>
+				<Property Name="Source[9].properties[1].type" Type="Str">Remove block diagram</Property>
+				<Property Name="Source[9].properties[1].value" Type="Bool">false</Property>
+				<Property Name="Source[9].propertiesCount" Type="Int">2</Property>
+				<Property Name="Source[9].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">11</Property>
 				<Property Name="TgtF_companyName" Type="Str">Wirebird Labs LLC</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">Links</Property>
