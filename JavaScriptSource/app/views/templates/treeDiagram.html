@@ -10,7 +10,7 @@
 						<i class="glyphicon glyphicon-share"></i>
 					</button>
 				</div>
-				{{node.name}}
+				{{node.name}} <i ng-show="node.isReentrant" class="glyphicon glyphicon-ok"></i>
 			</div>
 			<div class="col-sm-2">
 				<img ng-src="images/{{node.icon}}">
