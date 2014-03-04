@@ -1,6 +1,6 @@
 <script type="text/ng-template" id="tree_item_renderer.html">
 		<div class="row">
-			<div class="col-xs-10" ng-style="{'color':node.color}" ng-mouseenter="highlight(node)" ng-mouseleave="unhighlight(node)">
+			<div class="col-sm-10" ng-style="{'color':node.color}" ng-mouseenter="highlight(node)" ng-mouseleave="unhighlight(node)">
 				<div class="btn-group">
 					<button class="btn btn-default btn-xs" ng-click="collapse(node)" ng-show="node.collapsible">
 						<i class="glyphicon glyphicon-resize-small" ng-show="node.collapsed"></i>
@@ -12,12 +12,12 @@
 				</div>
 				{{node.name}}
 			</div>
-			<div class="col-xs-2">
+			<div class="col-sm-2">
 				<img ng-src="images/{{node.icon}}">
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xs-12" ng-style="{'color':node.color}">
+		<div class="row" ng-show="node.collapsible">
+			<div class="col-sm-12" ng-style="{'color':node.color}">
 				<ul class="list-group" collapse="node.collapsed">
 					<li class="list-group-item" ng-repeat="node in node.children" ng-class="{'list-group-item-info' : node.highlight}" ng-include="'tree_item_renderer.html'">
 					</li>
